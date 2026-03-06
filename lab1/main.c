@@ -18,6 +18,7 @@ typedef struct T_sequence_element {
 
 data_t initialize_data(long double);
 void step(data_t*);
+void alt_step(data_t*);
 void print_data(data_t*, int);
 
 int main(void) {
@@ -31,9 +32,15 @@ int main(void) {
     printf("==========================\n");
 
     data_t data = initialize_data(x_0);
+    data_t alt_data = initialize_data(x_0);
     for (int i = 0; i < K_MAX; ++i) {
+        printf("MAIN:\n");
         print_data(&data, precision);
+        printf("ALT:\n");
+        print_data(&alt_data, precision);
+
         step(&data);
+        alt_step(&alt_data);
     }
 
     printf("END\n");
@@ -46,8 +53,14 @@ data_t initialize_data(long double x_0) {
 
 void step(data_t* data) {
     data->fx  = data->fx  + 3.0f * data->fx  * (1.0f - data->fx);
-    data->dx  = data->dx  + 3.0 * data->dx  * (1.0 - data->dx);
+    data->dx  = data->dx  + 3.0  * data->dx  * (1.0 - data->dx);
     data->ldx = data->ldx + 3.0L * data->ldx * (1.0L - data->ldx);
+}
+
+void alt_step(data_t* data) {
+    data->fx  = 4.0f * data->fx  - 3.0f * data->fx  * data->fx;
+    data->dx  = 4.0  * data->dx  - 3.0  * data->dx  * data->dx;
+    data->ldx = 4.0L * data->ldx - 3.0L * data->ldx * data->ldx;
 }
 
 void print_data(data_t* data, int precision) {
