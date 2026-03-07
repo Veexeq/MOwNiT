@@ -7,8 +7,9 @@
 #define __USE_MINGW_ANSI_STDIO 1
 
 #include <stdio.h>
+#include <math.h>
 
-#define K_MAX 10
+#define K_MAX 100
 
 typedef struct T_sequence_element {
     float fx;
@@ -28,22 +29,15 @@ int main(void) {
     const long double x_0 = 0.1000000000000001;
     const int precision = 16;
 
-    printf("BEGINING\n");
-    printf("==========================\n");
-
     data_t data = initialize_data(x_0);
     data_t alt_data = initialize_data(x_0);
     for (int i = 0; i < K_MAX; ++i) {
-        printf("MAIN:\n");
-        print_data(&data, precision);
-        printf("ALT:\n");
         print_data(&alt_data, precision);
-
+        
         step(&data);
         alt_step(&alt_data);
     }
 
-    printf("END\n");
     return 0;
 }
 
@@ -64,8 +58,9 @@ void alt_step(data_t* data) {
 }
 
 void print_data(data_t* data, int precision) {
-    printf("(float): %0.*f\n", precision, data->fx);
-    printf("(double): %0.*lf\n", precision, data->dx);
+    printf("(float): %0.*f, ", precision, data->fx);
+    printf("(f-d diff): %.*lf, ", precision, fabs(data->dx - data->fx));
+    printf("(double): %0.*lf, ", precision, data->dx);
+    printf("(d-l diff): %0.*Lf, ", precision, fabsl(data->ldx - data->dx));
     printf("(long double): %0.*Lf\n", precision, data->ldx);
-    printf("==========================\n");
 }
