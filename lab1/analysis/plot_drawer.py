@@ -63,7 +63,7 @@ def generate_all_plots():
         for variant in VARIANTS:
             create_plot(df_gcc, 'GCC', precision, variant)
 
-    # # MSVC-related plots
+    # MSVC-related plots
     for precision in MSVC_PRECISIONS:
         for variant in VARIANTS:
             create_plot(df_msvc, 'MSVC', precision, variant)
