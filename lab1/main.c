@@ -1,13 +1,22 @@
-/*
-    GCC on Windows uses msvctr.dll by default, which uses Microsoft's
-    implementation of printf. That implementation doesn't expect a long double
-    argument which causes problems. This preprocessor directive forces the compiler
-    to use MINGW's implementation.
-*/
-#define __USE_MINGW_ANSI_STDIO 1
+/* COMPILER-DEPENDANT BEHAVIOR */
+#ifdef _MSC_VER
+    #define FILENAME "output/msvc_results.csv"
+#elif __GNUC__
+    /*
+        GCC on Windows uses msvctr.dll by default, which uses Microsoft's
+        implementation of printf. That implementation doesn't expect a long double
+        argument which causes problems. This preprocessor directive forces the compiler
+        to use MINGW's implementation.
+    */
+    #define __USE_MINGW_ANSI_STDIO 1
+    #define FILENAME "output/gcc_results.csv"
+#else
+    #define FILENAME "output/unknown_results.csv"
+#endif
 
 #include <stdio.h>
 #include <math.h>
+#include <float.h>
 
 #define K_MAX 100
 
@@ -24,20 +33,41 @@ void print_data(data_t*, int);
 
 int main(void) {
 
-    // const long double x_0 = 0.1000001;
-    // const int precision = 7;
-    const long double x_0 = 0.1000000000000001;
-    const int precision = 16;
-
-    data_t data = initialize_data(x_0);
-    data_t alt_data = initialize_data(x_0);
-    for (int i = 0; i < K_MAX; ++i) {
-        print_data(&alt_data, precision);
-        
-        step(&data);
-        alt_step(&alt_data);
+    FILE* file = fopen(FILENAME, "w");
+    if (!file) {
+        printf("Error: couldn't open file.\n");
+        return 1;
     }
 
+    // File header
+    fprintf(file, "x0,variant,k,float_val,double_val,long_double_val,delta_fd,delta_dl\n");
+
+    const int x_0_count = 3;
+    const long double x_0s[] = { 0.1L, 0.1000001L, 0.1000000000000001L };
+
+    for (int i = 0; i < x_0_count; ++i) {
+        data_t data     = initialize_data(x_0s[i]);
+        data_t alt_data = initialize_data(x_0s[i]);
+        const long double x_0 = x_0s[i];
+
+        for (int k = 0; k < K_MAX; ++k) {
+            fprintf(file, "%.21Lf,basic,%d,%.21f,%.21f,%.21Lf,%.21Le,%.21Le\n", 
+                    x_0, k, data.fx, data.dx, data.ldx, 
+                    fabsl((long double) data.fx - data.dx), 
+                    fabsl((long double) data.dx - data.ldx));
+            step(&data);
+        }
+
+        for (int k = 0; k < K_MAX; ++k) {
+            fprintf(file, "%.21Lf,alt,%d,%.21f,%.21f,%.21Lf,%.21Le,%.21Le\n", 
+                    x_0, k, alt_data.fx, alt_data.dx, alt_data.ldx, 
+                    fabsl((long double) alt_data.fx - alt_data.dx), 
+                    fabsl((long double) alt_data.dx - alt_data.ldx));
+            alt_step(&alt_data);
+        }
+    }
+
+    fclose(file);
     return 0;
 }
 
