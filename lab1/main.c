@@ -16,7 +16,6 @@
 
 #include <stdio.h>
 #include <math.h>
-#include <float.h>
 
 #define K_MAX 100
 
