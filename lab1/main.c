@@ -86,11 +86,3 @@ void alt_step(data_t* data) {
     data->dx  = 4.0  * data->dx  - 3.0  * data->dx  * data->dx;
     data->ldx = 4.0L * data->ldx - 3.0L * data->ldx * data->ldx;
 }
-
-void print_data(data_t* data, int precision) {
-    printf("(float): %0.*f, ", precision, data->fx);
-    printf("(f-d diff): %.*lf, ", precision, fabs(data->dx - data->fx));
-    printf("(double): %0.*lf, ", precision, data->dx);
-    printf("(d-l diff): %0.*Lf, ", precision, fabsl(data->ldx - data->dx));
-    printf("(long double): %0.*Lf\n", precision, data->ldx);
-}
