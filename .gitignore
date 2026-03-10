@@ -1,3 +1,4 @@
 *.code-workspace
 build/
 .vscode/
+lab1/analysis/__pycache__
