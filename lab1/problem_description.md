@@ -2,26 +2,20 @@
 ***
 #### Wyznaczyć kolejne elementy ciągu:
 $$
-\begin{gather*}
-    x_{k+1} = 
-    \begin{cases}
-        x_k + 3x_k \cdot (1 - x_k) \quad &k \geq 1 \\
-        x_k = 0.1 \quad &k = 1
-    \end{cases}
-\end{gather*}
+x_{k+1} = \begin{cases} 
+x_k + 3x_k(1 - x_k) & k \geq 1 \\ 
+x_k = 0.1 & k = 1 
+\end{cases}
 $$
-Porównać otrzymane wartości dla różnej precyzji zmiennych: `float`, `double`, `long double`.  
 
 #### Następnie użyć przekształconej postaci wzoru:
 $$
-\begin{gather*}
-    x_{k+1} = 
-    \begin{cases}
-        4x_k - 3x_k x_k \quad &k \geq 1 \\
-        x_k = 0.1 \quad &k = 1
-    \end{cases}
-\end{gather*}
+x_{k+1} = \begin{cases} 
+4x_k - 3x_k^2 & k \geq 1 \\ 
+x_k = 0.1 & k = 1 
+\end{cases}
 $$
+
 Spróbować wyjaśnić otrzymane wyniki.  
 
 #### Powtórzyć obliczenia dla:
