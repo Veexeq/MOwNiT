@@ -58,3 +58,43 @@ def lagrange_formula(xs: NDArray[np.float64], ys: NDArray[np.float64]) -> Callab
         return result
 
     return formula
+
+def newton_formula(xs: NDArray[np.float64], ys: NDArray[np.float64]) -> Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]:
+    """
+    Generates an optimized callable function for evaluating the Newton interpolating polynomial.
+
+    Calculates the divided differences in-place to save memory, 
+    and returns a closure that evaluates the polynomial using Horner's method 
+    for maximum performance and numerical stability.
+
+    Parameters
+    ----------
+    xs : NDArray[np.float64]
+        A 1D array of x-coordinates (nodes).
+    ys : NDArray[np.float64]
+        A 1D array of y-coordinates.
+
+    Returns
+    -------
+    Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]
+        Function to evaluate the polynomial at given x-value(s).
+    """
+    n = len(xs)
+    
+    # Memory-optimized DP algorithm: use previous coefficients to build up the new ones
+    coef = np.copy(ys)
+    for j in range(1, n):
+        for i in range(n - 1, j - 1, -1):
+            coef[i] = (coef[i] - coef[i - 1]) / (xs[i] - xs[i - j])
+    
+    def formula(x: Union[float, NDArray[np.float64]]) -> NDArray[np.float64]:
+        x_array = np.asarray(x, dtype=np.float64)
+        result = np.full_like(x_array, coef[-1], dtype=np.float64)
+        
+        # Horner's scheme
+        for i in range(n - 2, -1, -1):
+            result = coef[i] + (x_array - xs[i]) * result
+        
+        return result
+    
+    return formula
