@@ -2,7 +2,9 @@ import numpy as np
 from numpy.typing import NDArray
 from typing import Callable, Union
 
-def lagrange_formula(xs: NDArray[np.float64], ys: NDArray[np.float64]) -> Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]:
+def lagrange_formula(xs: NDArray[np.float64], 
+                     ys: NDArray[np.float64]
+) -> Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]:
     """
     Generates a callable function for evaluating the Lagrange interpolating polynomial.
 
@@ -59,7 +61,9 @@ def lagrange_formula(xs: NDArray[np.float64], ys: NDArray[np.float64]) -> Callab
 
     return formula
 
-def newton_formula(xs: NDArray[np.float64], ys: NDArray[np.float64]) -> Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]:
+def newton_formula(xs: NDArray[np.float64], 
+                   ys: NDArray[np.float64]
+) -> Callable[[Union[float, NDArray[np.float64]]], NDArray[np.float64]]:
     """
     Generates an optimized callable function for evaluating the Newton interpolating polynomial.
 
