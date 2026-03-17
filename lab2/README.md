@@ -31,7 +31,7 @@ cd lab2
 
 2. Utwórz i aktywuj środowisko wirtualne (opcjonalnie, ale zalecane):
 ```bash
-python -m venv venv
+python -m venv .venv
 # Windows:
 venv\Scripts\activate
 # Linux/macOS:
