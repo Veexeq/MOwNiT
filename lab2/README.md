@@ -53,7 +53,9 @@ python main.py
 
 ## Struktura plików projektu
 
-* `main.py` - Główny skrypt uruchamiający program i opcje wizualizacji.
+* `main.py` - Główny skrypt uruchamiający program.
 * `interpolators.py` - Implementacja algorytmów Lagrange'a i Newtona.
-* `utils.py` - Funkcje pomocnicze, w tym generowanie węzłów równoodległych i Czebyszewa.
+* `utils.py` - Funkcje pomocnicze, w tym generowanie węzłów równoodległych i Czebyszewa. Zawiera również kilka funkcji testowych.
+* `tests.py` - Zawiera `run_all_tests()`, która automatycznie testuje wszystkie funkcje zaimplementowane w `utils.py`. Zapisuje wyniki w postaci wykresów.
+* `visualizer.py` - Generuje wykresy.
 * `requirements.txt` - Lista zależności Pythona.
