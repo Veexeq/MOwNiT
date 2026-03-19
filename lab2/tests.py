@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 
 import utils
 import interpolators
@@ -59,6 +60,8 @@ def manual_tests(a, b, n, func, equation, filename):
     #     x_cheb, y_cheb, y_interp_cheb_newton,
     #     f'Newton | {equation}', f'newton_{filename}.png', n
     # )
+    
+    return max_diff_uniform, max_diff_chebyshev, error_2_uniform, error_2_chebyshev
 
 def manual_tests_handler():
     """
@@ -72,17 +75,22 @@ def manual_tests_handler():
     k = 2
     f = lambda x: 10*m + (x ** 2)/k - 10*m*np.cos(k*x)
     
-    # Small nodes number:
-    # for nodes_number in range(3, 20):
-    #     manual_tests(lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}')
+    csv_filename = 'bledy_interpolacji.csv'
     
-    # Medium nodes number:
-    for nodes_number in range(20, 100, 10):
-        manual_tests(lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}')
-    
-    # # Big nodes number:
-    # for nodes_number in range(100, 1000, 100):
-    #     manual_tests(lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}')
+    with open(csv_filename, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        
+        writer.writerow(['Liczba węzłów (N)', 'Max Odchyłka (Jednostajny)', 'Max Odchyłka (Czebyszew)', 'RMSE (Jednostajny)', 'RMSE (Czebyszew)'])
+        
+        # Medium nodes number:
+        for nodes_number in range(20, 100, 10):
+            max_u, max_c, rmse_u, rmse_c = manual_tests(
+                lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
+            )
+            
+            writer.writerow([nodes_number, max_u, max_c, rmse_u, rmse_c])
+            
+    print(f"\nZakończono testy. Zapisano wyniki do pliku: {csv_filename}")
             
 
 def run_all_tests():
