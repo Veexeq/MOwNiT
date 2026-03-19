@@ -4,6 +4,7 @@ from numpy.typing import NDArray
 from pathlib import Path
 
 OUTPUT_PATH = Path(__file__).resolve().parent / 'plots'
+CUSTOM_FUNCTION_OUTPUT_PATH = OUTPUT_PATH / 'custom_function'
 
 def plot_and_save_comparison(
     x_dense: NDArray[np.float64], y_true: NDArray[np.float64],
@@ -48,10 +49,10 @@ def plot_and_save_comparison(
     plt.grid(True, linestyle=':', alpha=0.7)
 
     # Save and cleanup
-    OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
+    CUSTOM_FUNCTION_OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
     
     plt.tight_layout()
-    plt.savefig(OUTPUT_PATH / filename, dpi=150)
+    plt.savefig(CUSTOM_FUNCTION_OUTPUT_PATH / filename, dpi=150)
     plt.close()
     print(f"Zapisano wykres: {filename}")
     
