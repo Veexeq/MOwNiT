@@ -38,12 +38,13 @@ def manual_tests(a, b, n, func, equation, filename):
     # 4. Calculate errors between an interpolated polynomial and the reference one
     max_diff_uniform   = np.max(np.abs(y_interp_unif_lagrange - y_true))
     max_diff_chebyshev = np.max(np.abs(y_interp_cheb_lagrange - y_true))
-    error_2_uniform   = np.linalg.norm(y_interp_unif_lagrange - y_true) / n
-    error_2_chebyshev = np.linalg.norm(y_interp_cheb_lagrange - y_true) / n
-    print(f'Maksymalna odchyłka w punkcie kontrolnym między wartością obliczoną z rozkładu jednostajnego a referencją: {max_diff_uniform}')
-    print(f'Maksymalna odchyłka w punkcie kontrolnym między wartością obliczoną z zer Chebysheva a referencją: {max_diff_chebyshev}')
-    print(f'Błąd 2 (unif vs ref) z tablicy: {error_2_uniform}')
-    print(f'Błąd 2 (cheb vs ref) z tablicy: {error_2_chebyshev}')    
+    error_2_uniform   = np.sqrt(np.mean((y_interp_unif_lagrange - y_true) ** 2))
+    error_2_chebyshev = np.sqrt(np.mean((y_interp_cheb_lagrange - y_true) ** 2))
+    
+    print(f'Maks. odchyłka (jednostajny vs ref): {max_diff_uniform}')
+    print(f'Maks. odchyłka (Czebyszew vs ref): {max_diff_chebyshev}')
+    print(f'Błąd RMSE (jednostajny vs ref): {error_2_uniform}')
+    print(f'Błąd RMSE (Czebyszew vs ref): {error_2_chebyshev}')
 
     # 5. Draw plots
     visualizer.plot_and_save_comparison(
