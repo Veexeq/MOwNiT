@@ -10,7 +10,9 @@ NA RYSUNKACH MA BYĆ WSZYSTKO PO POLSKU
 NA RAZ NASTĘPNY (DO HERMITA) MAMY TYLKO PIERWSZĄ POCHODNĄ, 
 WYLICZONĄ ANALITYCZNIE. MOŻEMY SIĘ OGRANICZYĆ TYLKO DO JEDNEGO WZORU.
 
-BŁĄD LICZYMY W PUNKTACH KONTROLNYCH: MOICH 'x_dense'
+BŁĄD LICZYMY W PUNKTACH KONTROLNYCH: MOICH 'x_dense'.
+
+LICZBA WĘZŁÓW SENSOWNIE <= 200
 """
 def manual_tests(a, b, n, func, equation, filename):
     
@@ -82,8 +84,24 @@ def manual_tests_handler():
         
         writer.writerow(['Liczba węzłów (N)', 'Max Odchyłka (Jednostajny)', 'Max Odchyłka (Czebyszew)', 'RMSE (Jednostajny)', 'RMSE (Czebyszew)'])
         
-        # Medium nodes number:
-        for nodes_number in range(20, 100, 10):
+        # Small nodes number:
+        # for nodes_number in range(3, 20):
+        #     max_u, max_c, rmse_u, rmse_c = manual_tests(
+        #         lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
+        #     )
+            
+        #     writer.writerow([nodes_number, max_u, max_c, rmse_u, rmse_c])
+        
+        # # Medium nodes number:
+        # for nodes_number in range(20, 100, 10):
+        #     max_u, max_c, rmse_u, rmse_c = manual_tests(
+        #         lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
+        #     )
+            
+        #     writer.writerow([nodes_number, max_u, max_c, rmse_u, rmse_c])
+            
+        # Big nodes number:
+        for nodes_number in range(100, 1000, 100):
             max_u, max_c, rmse_u, rmse_c = manual_tests(
                 lower_boundary, upper_boundary, nodes_number, f, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
             )
