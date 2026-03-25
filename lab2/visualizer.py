@@ -55,4 +55,69 @@ def plot_and_save_comparison(
     plt.savefig(CUSTOM_FUNCTION_OUTPUT_PATH / filename, dpi=150)
     plt.close()
     print(f"Saved plot: {filename}")
+
+def plot_and_save_errors(
+    nodes_number: NDArray[np.float64], 
+    max_diff_uniform: NDArray[np.float64], 
+    max_diff_chebyshev: NDArray[np.float64], 
+    error_uniform: NDArray[np.float64], 
+    error_chebyshev: NDArray[np.float64], 
+    test_name: str, 
+    filename: str
+) -> None:
+    """
+    Draw a plot of errors of the interpolation process in a logarithmic scale.
+    """
+    plt.figure(figsize=(14, 6))
+
+    # --- Plot 1: Max diff ---
+    plt.subplot(1, 2, 1)
+    plt.plot(nodes_number, max_diff_uniform, 'r-o', label='Węzły Równomierne')
+    plt.plot(nodes_number, max_diff_chebyshev, 'b-s', label='Węzły Czebyszewa')
+    plt.yscale('log') 
     
+    plt.title(f'{test_name} - Błąd maksymalny')
+    plt.xlabel('Liczba węzłów (N)')
+    plt.ylabel('Błąd (skala logarytmiczna)')
+    plt.legend()
+    plt.grid(True, linestyle=':', alpha=0.7)
+    plt.grid(True, which='minor', linestyle=':', alpha=0.4) 
+
+    # --- Plot 2: Custom error given by a formula ---
+    plt.subplot(1, 2, 2)
+    plt.plot(nodes_number, error_uniform, 'r-o', label='Węzły Równomierne')
+    plt.plot(nodes_number, error_chebyshev, 'b-s', label='Węzły Czebyszewa')
+    plt.yscale('log')
+    
+    plt.title(f'{test_name} - Błąd zadany wzorem')
+    plt.xlabel('Liczba węzłów (N)')
+    plt.ylabel('Błąd (skala logarytmiczna)')
+    plt.legend()
+    plt.grid(True, linestyle=':', alpha=0.7)
+    plt.grid(True, which='minor', linestyle=':', alpha=0.4)
+
+    # Save and cleanup
+    CUSTOM_FUNCTION_OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
+    
+    plt.tight_layout()
+    plt.savefig(CUSTOM_FUNCTION_OUTPUT_PATH / filename, dpi=150)
+    plt.close()
+    print(f"Saved error plot: {filename}")
+
+
+def plot_errors_from_csv(csv_filepath: str, test_name: str, filename: str) -> None:
+    """
+    Generates an error plot from a .csv file.
+    """
+    data = np.loadtxt(csv_filepath, delimiter=',', skiprows=1)
+    
+    nodes_number       = data[:, 0]
+    max_diff_uniform   = data[:, 1]
+    max_diff_chebyshev = data[:, 2]
+    error_uniform      = data[:, 3]
+    error_chebyshev    = data[:, 4]
+
+    plot_and_save_errors(
+        nodes_number, max_diff_uniform, max_diff_chebyshev, 
+        error_uniform, error_chebyshev, test_name, filename
+    )

@@ -102,7 +102,13 @@ def manual_tests_handler():
             writer.writerow([nodes_number, max_u, max_c, rmse_u, rmse_c])
             
     print(f"\nFinished testing. Saved results to path: {csv_filepath}")
-            
+    
+    # Draw the error plot from .csv file.
+    visualizer.plot_errors_from_csv(
+        csv_filepath=csv_filepath,
+        test_name="Analiza Błędów Interpolacji",
+        filename="lagrange_custom_function_errors.png"
+    )
 
 def run_all_tests():
     n = 15 
