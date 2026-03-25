@@ -49,12 +49,13 @@ def custom_function_lagrange_testing(a, b, n, func, equation, filename):
         x_dense, y_true,
         x_unif, y_unif, y_interp_unif_lagrange, 
         x_cheb, y_cheb, y_interp_cheb_lagrange,
-        f'Lagrange | {equation}', f'lagrange_{filename}.png', n
+        f'Lagrange | {equation}', f'lagrange_{filename}.png', n,
+        subdir='lagrange'
     )
     
     return max_diff_uniform, max_diff_chebyshev, error_2_uniform, error_2_chebyshev
 
-def custom_function_handler():
+def custom_function_lagrange_handler():
     """
     Handles tests of the assigned function: 
     Tests for:
@@ -107,7 +108,8 @@ def custom_function_handler():
     visualizer.plot_errors_from_csv(
         csv_filepath=csv_filepath,
         test_name="Analiza Błędów Interpolacji",
-        filename="lagrange_custom_function_errors.png"
+        filename="lagrange_custom_function_errors.png",
+        subdir='lagrange'
     )
 
 def custom_function_hermite_testing(a, b, n, func, func_deriv, equation, filename):
@@ -147,7 +149,8 @@ def custom_function_hermite_testing(a, b, n, func, func_deriv, equation, filenam
         x_dense, y_true,
         x_unif, y_unif, y_interp_unif_hermite, 
         x_cheb, y_cheb, y_interp_cheb_hermite,
-        f'Hermite | {equation}', f'hermite_{filename}.png', n
+        f'Hermite | {equation}', f'hermite_{filename}.png', n,
+        subdir='hermite'
     )
     
     return max_diff_uniform, max_diff_chebyshev, error_2_uniform, error_2_chebyshev
@@ -175,7 +178,7 @@ def custom_function_hermite_handler():
                          'error_chebyshev'])
         
         # Prepare a list of node counts to test
-        nodes_to_test = list(range(3, 10)) + list(range(10, 100, 10)) + list(range(100, 500, 100))
+        nodes_to_test = nodes_to_test = list(range(3, 10)) + list(range(10, 50, 5))
         
         for nodes_number in nodes_to_test:
             # Note passing 'function_deriv' to the new testing function
@@ -192,7 +195,8 @@ def custom_function_hermite_handler():
     visualizer.plot_errors_from_csv(
         csv_filepath=csv_filepath,
         test_name="Error Analysis of Interpolation (Hermite)",
-        filename="hermite_custom_function_errors.png"
+        filename="hermite_custom_function_errors.png",
+        subdir='hermite'
     )
 
 def run_all_tests():
