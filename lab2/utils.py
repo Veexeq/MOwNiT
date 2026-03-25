@@ -65,3 +65,14 @@ def assigned_function(x: NDArray[np.float64]) -> NDArray[np.float64]:
     k: int = 2
     
     return 10*m + (x ** 2)/k - 10*m*np.cos(k*x)
+
+def assigned_function_deriv(x: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    The first derivative of an assigned function, calculated analytically:
+    f(x)  = 10*m + (x^2)/k - 10*m*cos(k*x)
+    f'(x) = (2*x)/k + 10*m*k*sin(k*x)
+    """
+    m: int = 1
+    k: int = 2
+    
+    return (2.0 * x) / k + 10.0 * m * k * np.sin(k * x)
