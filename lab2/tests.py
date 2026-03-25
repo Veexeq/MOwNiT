@@ -14,7 +14,7 @@ BŁĄD LICZYMY W PUNKTACH KONTROLNYCH: MOICH 'x_dense'.
 
 LICZBA WĘZŁÓW SENSOWNIE <= 200
 """
-def manual_tests(a, b, n, func, equation, filename):
+def custom_function_lagrange_testing(a, b, n, func, equation, filename):
     """
     Testing how precise a given function 'func' behaves, when interpolated
     using the Lagrange polynomial. This testing doesn't cover using Newton's polynomial.
@@ -54,7 +54,7 @@ def manual_tests(a, b, n, func, equation, filename):
     
     return max_diff_uniform, max_diff_chebyshev, error_2_uniform, error_2_chebyshev
 
-def manual_tests_handler():
+def custom_function_handler():
     """
     Handles tests of the assigned function: 
     Tests for:
@@ -79,7 +79,7 @@ def manual_tests_handler():
         
         # Small nodes number:
         for nodes_number in range(3, 10):
-            max_u, max_c, rmse_u, rmse_c = manual_tests(
+            max_u, max_c, rmse_u, rmse_c = custom_function_lagrange_testing(
                 lower_boundary, upper_boundary, nodes_number, function, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
             )
             
@@ -87,7 +87,7 @@ def manual_tests_handler():
         
         # # Medium nodes number:
         for nodes_number in range(10, 100, 10):
-            max_u, max_c, rmse_u, rmse_c = manual_tests(
+            max_u, max_c, rmse_u, rmse_c = custom_function_lagrange_testing(
                 lower_boundary, upper_boundary, nodes_number, function, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
             )
             
@@ -95,7 +95,7 @@ def manual_tests_handler():
             
         # Big nodes number:
         for nodes_number in range(100, 500, 100):
-            max_u, max_c, rmse_u, rmse_c = manual_tests(
+            max_u, max_c, rmse_u, rmse_c = custom_function_lagrange_testing(
                 lower_boundary, upper_boundary, nodes_number, function, '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
             )
             
