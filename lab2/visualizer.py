@@ -54,5 +54,5 @@ def plot_and_save_comparison(
     plt.tight_layout()
     plt.savefig(CUSTOM_FUNCTION_OUTPUT_PATH / filename, dpi=150)
     plt.close()
-    print(f"Zapisano wykres: {filename}")
+    print(f"Saved plot: {filename}")
     

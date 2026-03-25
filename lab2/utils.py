@@ -53,3 +53,15 @@ def absolute_function(x: NDArray[np.float64]) -> NDArray[np.float64]:
     Recommended test interval: [-1, 1] 
     """
     return np.abs(x)
+
+def assigned_function(x: NDArray[np.float64]) -> NDArray[np.float64]:
+    """
+    A function that was assigned to me in the lab-work description:
+    f(x) = 10*m + (x ** 2)/k - 10*m*np.cos(k*x), where m = 1 and k = 2.
+    Testing interval pointed out in the description: [-3*pi, 3*pi]
+    """
+    
+    m: int = 1
+    k: int = 2
+    
+    return 10*m + (x ** 2)/k - 10*m*np.cos(k*x)

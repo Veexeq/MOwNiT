@@ -1,3 +1,0 @@
-1. Oba rozmieszczenia węzłów, dla dowolnej liczby węzłów
-2. Kalkulacja błędów
-3. Rysowanie wykresów
