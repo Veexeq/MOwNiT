@@ -110,6 +110,91 @@ def custom_function_handler():
         filename="lagrange_custom_function_errors.png"
     )
 
+def custom_function_hermite_testing(a, b, n, func, func_deriv, equation, filename):
+    """
+    Tests the accuracy of interpolating a given function 'func' using the Hermite polynomial.
+    Requires providing a function 'func_deriv' that computes the analytical first derivative.
+    """
+    
+    # 1. Dense grid for the reference function
+    x_dense = np.linspace(a, b, 1000)
+    y_true = func(x_dense)
+
+    # 2. Uniform nodes
+    x_unif = utils.generate_uniform_nodes(a, b, n)
+    y_unif = func(x_unif)
+    dy_unif = func_deriv(x_unif) # Note: we obtain derivatives
+        
+    poly_unif_hermite = interpolators.hermite_formula(x_unif, y_unif, dy_unif)
+    y_interp_unif_hermite = poly_unif_hermite(x_dense)
+
+    # 3. Chebyshev nodes
+    x_cheb = utils.generate_chebyshev_nodes(a, b, n)
+    y_cheb = func(x_cheb)
+    dy_cheb = func_deriv(x_cheb) # Note: we obtain derivatives
+        
+    poly_cheb_hermite = interpolators.hermite_formula(x_cheb, y_cheb, dy_cheb)
+    y_interp_cheb_hermite = poly_cheb_hermite(x_dense)
+
+    # 4. Error calculations
+    max_diff_uniform   = np.max(np.abs(y_interp_unif_hermite - y_true))
+    max_diff_chebyshev = np.max(np.abs(y_interp_cheb_hermite - y_true))
+    error_2_uniform    = np.sqrt(np.sum((y_interp_unif_hermite - y_true) ** 2)) / n
+    error_2_chebyshev  = np.sqrt(np.sum((y_interp_cheb_hermite - y_true) ** 2)) / n
+
+    # 5. Plot comparison graphs (we use the same function from visualizer.py!)
+    visualizer.plot_and_save_comparison(
+        x_dense, y_true,
+        x_unif, y_unif, y_interp_unif_hermite, 
+        x_cheb, y_cheb, y_interp_cheb_hermite,
+        f'Hermite | {equation}', f'hermite_{filename}.png', n
+    )
+    
+    return max_diff_uniform, max_diff_chebyshev, error_2_uniform, error_2_chebyshev
+
+def custom_function_hermite_handler():
+    """
+    Manages tests for Hermite interpolation and saves the results to a dedicated CSV file.
+    """
+    lower_boundary = -3 * np.pi
+    upper_boundary =  3 * np.pi
+    
+    # We attach our function and its derivative from utils.py
+    function = utils.assigned_function
+    function_deriv = utils.assigned_function_deriv 
+    
+    csv_filepath: str = './data/hermite_custom_function_errors.csv'
+    
+    with open(csv_filepath, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        
+        writer.writerow(['nodes_number', 
+                         'max_diff_uniform', 
+                         'max_diff_chebyshev', 
+                         'error_uniform', 
+                         'error_chebyshev'])
+        
+        # Prepare a list of node counts to test
+        nodes_to_test = list(range(3, 10)) + list(range(10, 100, 10)) + list(range(100, 500, 100))
+        
+        for nodes_number in nodes_to_test:
+            # Note passing 'function_deriv' to the new testing function
+            max_u, max_c, rmse_u, rmse_c = custom_function_hermite_testing(
+                lower_boundary, upper_boundary, nodes_number, 
+                function, function_deriv, 
+                '10 + x^2/2 - 10*cos(2x)', f'custom_function_{nodes_number}'
+            )
+            writer.writerow([nodes_number, max_u, max_c, rmse_u, rmse_c])
+            
+    print(f"\nFinished Hermite testing. Saved results to path: {csv_filepath}")
+    
+    # Plot aggregate error graph from the new file
+    visualizer.plot_errors_from_csv(
+        csv_filepath=csv_filepath,
+        test_name="Error Analysis of Interpolation (Hermite)",
+        filename="hermite_custom_function_errors.png"
+    )
+
 def run_all_tests():
     n = 15 
 
