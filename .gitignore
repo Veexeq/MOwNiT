@@ -3,3 +3,6 @@ build/
 .vscode/
 __pycache__/
 trybus_cw2a.txt
+lab2/**/*.png
+lab2-lagrange_interpolation/**/*.png
+lab4_notes.txt
