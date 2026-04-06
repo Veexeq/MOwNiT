@@ -78,7 +78,7 @@ def plot_and_save_errors(
     plt.plot(nodes_number, max_diff_chebyshev, 'b-s', label='Węzły Czebyszewa')
     plt.yscale('log') 
     
-    plt.title(f'{test_name} - Błąd maksymalny')
+    plt.title(f'{test_name} - Maksymalny błąd bezwzględny')
     plt.xlabel('Liczba węzłów (N)')
     plt.ylabel('Błąd (skala logarytmiczna)')
     plt.legend()
@@ -91,7 +91,7 @@ def plot_and_save_errors(
     plt.plot(nodes_number, error_chebyshev, 'b-s', label='Węzły Czebyszewa')
     plt.yscale('log')
     
-    plt.title(f'{test_name} - Błąd zadany wzorem')
+    plt.title(f'{test_name} - Niestandardowy błąd')
     plt.xlabel('Liczba węzłów (N)')
     plt.ylabel('Błąd (skala logarytmiczna)')
     plt.legend()
