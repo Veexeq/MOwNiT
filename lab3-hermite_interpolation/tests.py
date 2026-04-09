@@ -97,7 +97,8 @@ def custom_function_newton_testing(a, b, n, func, equation, filename):
     """
     
     # 1. A dense net for the reference function
-    x_dense = np.linspace(a, b, 1000)
+    N = 1000
+    x_dense = np.linspace(a, b, N)
     y_true = func(x_dense)
 
     # 2. Uniform distribution
@@ -117,8 +118,8 @@ def custom_function_newton_testing(a, b, n, func, equation, filename):
     # 4. Calculate errors between an interpolated polynomial and the reference one
     max_diff_uniform   = np.max(np.abs(y_interp_unif_newton - y_true))
     max_diff_chebyshev = np.max(np.abs(y_interp_cheb_newton - y_true))
-    error_2_uniform    = np.sqrt(np.sum((y_interp_unif_newton - y_true) ** 2)) / n
-    error_2_chebyshev  = np.sqrt(np.sum((y_interp_cheb_newton - y_true) ** 2)) / n
+    error_2_uniform    = np.sqrt(np.sum((y_interp_unif_newton - y_true) ** 2)) / N
+    error_2_chebyshev  = np.sqrt(np.sum((y_interp_cheb_newton - y_true) ** 2)) / N
 
     # 5. Draw plots
     visualizer.plot_and_save_comparison(
@@ -176,7 +177,8 @@ def custom_function_hermite_testing(a, b, n, func, deriv_func, equation, filenam
     """
     
     # 1. A dense net for the reference function
-    x_dense = np.linspace(a, b, 1000)
+    N = 1000
+    x_dense = np.linspace(a, b, N)
     y_true = func(x_dense)
 
     # 2. Uniform distribution
@@ -198,8 +200,8 @@ def custom_function_hermite_testing(a, b, n, func, deriv_func, equation, filenam
     # 4. Calculate errors between an interpolated polynomial and the reference one
     max_diff_uniform   = np.max(np.abs(y_interp_unif_hermite - y_true))
     max_diff_chebyshev = np.max(np.abs(y_interp_cheb_hermite - y_true))
-    error_2_uniform    = np.sqrt(np.sum((y_interp_unif_hermite - y_true) ** 2)) / n
-    error_2_chebyshev  = np.sqrt(np.sum((y_interp_cheb_hermite - y_true) ** 2)) / n
+    error_2_uniform    = np.sqrt(np.sum((y_interp_unif_hermite - y_true) ** 2)) / N
+    error_2_chebyshev  = np.sqrt(np.sum((y_interp_cheb_hermite - y_true) ** 2)) / N
 
     # 5. Draw plots
     visualizer.plot_and_save_comparison(
