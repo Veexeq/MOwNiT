@@ -1,0 +1,268 @@
+#set document(title: "MOwNiT: Interpolacja funkcjami sklejanymi.", author: "Wiktor Trybus")
+#set page(
+  paper: "a4",
+  margin: (x: 2.5cm, y: 2.5cm),
+  numbering: "1",
+)
+#set text(lang: "pl", size: 11pt, font: "New Computer Modern")
+#set par(justify: true)
+#set heading(numbering: "1.")
+
+#show figure: set block(breakable: false)
+
+#set document(title: "MOwNiT: Interpolacja funkcjami sklejanymi", author: "Wiktor Trybus")
+#set page(
+  paper: "a4",
+  margin: (x: 2.5cm, y: 2.5cm),
+  numbering: "1",
+)
+#set text(lang: "pl", size: 11pt, font: "New Computer Modern")
+#set par(justify: true)
+#set heading(numbering: "1.")
+
+#show figure: set block(breakable: false)
+
+// ==========================================
+// CZĘŚĆ I: NAGŁÓWEK
+// ==========================================
+#align(center)[
+  #text(size: 16pt, weight: "bold")[Metody Obliczeniowe w Nauce i Technice] \
+  #v(0.5em)
+  #text(size: 14pt)[Laboratorium 4: Interpolacja funkcjami sklejanymi]
+]
+#v(1em)
+
+#align(center)[
+  #text(size: 12pt)[*Autor:* Wiktor Trybus | *Grupa laboratoryjna:* 4 | *Data:* 15.04.2026]
+]
+
+#line(length: 100%, stroke: 0.5pt)
+#v(1em)
+
+// ==========================================
+// CZĘŚĆ II: DANE TECHNICZNE
+// ==========================================
+= Dane techniczne
+#v(1em)
+Obliczenia oraz generację wykresów i tabel zrealizowano przy użyciu następujących narzędzi:
+- *Język programowania:* Python 3.13.3
+- *Główne biblioteki:* NumPy (obliczenia wektorowe i rozwiązywanie układów równań liniowych), Matplotlib (wizualizacja danych), Pandas (agregacja wyników)
+- *Precyzja obliczeń:* 64-bitowa precyzja zmiennoprzecinkowa (standard `float64` z NumPy)
+- *Środowisko i sprzęt:* - System operacyjny: Windows 11 x64
+  - Procesor: Intel Core i7-12700H; 2,30GHz - 4,70GHz
+
+// ==========================================
+// CZĘŚĆ III: METODOLOGIA
+// ==========================================
+= Metodologia i realizacja ćwiczenia
+#v(1em)
+Celem ćwiczenia była implementacja oraz analiza porównawcza interpolacji funkcjami sklejanymi (splajnami) drugiego oraz trzeciego stopnia. Badano wpływ gęstości siatki węzłów oraz doboru warunków brzegowych na stabilność i dokładność przybliżenia. Funkcja referencyjna została zadana wzorem:
+$ f(x) = 10 + 0.5 x^2 - 10 cos(2x) $
+określonym na przedziale $x in [-3pi, 3pi]$. Dodatkowo, na potrzeby implementacji warunków brzegowych typu utwierdzonego (ang. _clamped boundary_), wyznaczono analitycznie pierwszą pochodną badanej funkcji:
+$ f'(x) = x + 20 sin(2x) $
+
+Eksperymenty numeryczne przeprowadzono w następujących krokach:
++ Zaimplementowano obiektowo funkcję sklejaną 2. stopnia ($C^1$) wyliczaną iteracyjnie oraz funkcję sklejaną 3. stopnia ($C^2$) wyliczaną globalnie przy użyciu algorytmu Thomasa dla macierzy trójprzekątniowej.
++ Dla obu stopni funkcji przygotowano po dwa różne warianty warunków brzegowych (m.in. warunek naturalny oraz utwierdzony).
++ Wygenerowano wykresy prezentujące dokładność dopasowania splajnów względem funkcji referencyjnej dla charakterystycznych przypadków liczby przedziałów $N in {5, 11, 21, 100}$. Węzły interpolacji rozmieszczono równomiernie na całym badanym przedziale.
++ Oceniono dokładność z jaką poszczególne warianty przybliżają funkcję referencyjną, badając dwie miary błędu:
+  - Maksymalny błąd bezwzględny (największa odchyłka, MBB).
+  - Błąd średniokwadratowy (RMSE).
++ Skonstruowano tabelę błędów oraz wykres zbieżności w skali logarytmicznej (log-log), na podstawie których przeanalizowano tempo zbieżności metod oraz propagację błędu.
+
+// ==========================================
+// CZĘŚĆ IV: PODSTAWY TEORETYCZNE
+// ==========================================
+#v(1em)
+= Podstawy teoretyczne i warunki brzegowe
+
+#v(1em)
+== Interpolacja funkcjami sklejanymi drugiego stopnia (kwadratowymi)
+Funkcja sklejana drugiego stopnia $S(x)$ na każdym podprzedziale $[x_i, x_(i+1)]$ jest definiowana jako wielomian kwadratowy:
+$ S_i (x) = a_i + b_i (x - x_i) + c_i (x - x_i)^2 $
+
+W celu wyznaczenia współczynników dla $n-1$ przedziałów ($3n-3$ niewiadomych), nakładane są następujące warunki:
+1. *Ciągłość funkcji w węzłach:* $S_i (x_i) = y_i$ oraz $S_i (x_(i+1)) = y_(i+1)$. Z pierwszego z nich bezpośrednio wynika, że $a_i = y_i$.
+2. *Ciągłość pierwszej pochodnej w węzłach wewnętrznych:* $S'_(i-1)(x_i) = S'_i (x_i)$, co prowadzi do zależności:
+$ b_(i-1) + 2c_(i-1) h_(i-1) = b_i, quad "gdzie" h_i = x_(i+1) - x_i $
+
+Powyższy układ posiada $3n-4$ równania. Do jego domknięcia wymagany jest jeden dodatkowy warunek brzegowy. W sprawozdaniu przeanalizowano:
+- *WB1 (Utwierdzony lewy):* Wymuszenie znanej wartości pochodnej na początku przedziału: $b_1 = f'(x_1)$.
+- *WB2 (Brak krzywizny początkowej):* Założenie, że pierwszy segment jest linią prostą ($c_1 = 0$), co implikuje $b_1 = (y_2 - y_1) / h_1$.
+
+#v(1em)
+== Interpolacja funkcjami sklejanymi trzeciego stopnia (sześciennymi)
+Splajny sześcienne zapewniają ciągłość klasy $C^2$. Na każdym przedziale funkcja przyjmuje postać:
+$ S_i (x) = a_i + b_i (x - x_i) + c_i (x - x_i)^2 + d_i (x - x_i)^3 $
+
+Wykorzystując fakt, że druga pochodna $S''(x)$ jest liniowa, oraz wprowadzając oznaczenia $sigma_i = 1/6 S''(x_i)$ oraz $Delta_i = (y_(i+1) - y_i) / h_i$, układ równań dla węzłów wewnętrznych redukuje się do postaci trójprzekątniowej:
+$ h_(i-1) sigma_(i-1) + 2(h_(i-1) + h_i) sigma_i + h_i sigma_(i+1) = Delta_i - Delta_(i-1) $
+
+Układ ten rozwiązywany jest globalnie za pomocą *algorytmu Thomasa* (eliminacji Gaussa dla macierzy trójprzekątniowych), co gwarantuje stabilność numeryczną. Przyjęto dwa warianty brzegowe:
+- *WB1 (Naturalny):* Zerowanie drugich pochodnych na krańcach: $sigma_1 = 0$ oraz $sigma_n = 0$.
+- *WB2 (Utwierdzony):* Narzucenie analitycznych wartości pierwszych pochodnych na obu końcach: $S'(x_1) = f'(x_1)$ oraz $S'(x_n) = f'(x_n)$.
+
+#v(1em)
+== Metryki oceny dokładności
+Do oceny jakości przybliżenia w gęstej siatce punktów kontrolnych (liczba węzłów $L=5000$) wykorzystano dwa wskaźniki:
+#v(1em)
+1. *Maksymalny Błąd Bezwzględny (MBB):*
+$ E_"max" = max_(j in {1, dots, L}) |f(x_j) - S(x_j)| $
+2. *Błąd średniokwadratowy (RMSE):*
+$ E_"RMSE" = sqrt(1/L sum_(j=1)^L (f(x_j) - S(x_j))^2) $
+
+// ==========================================
+// CZĘŚĆ V: WIZUALNA ANALIZA INTERPOLACJI
+// ==========================================
+#v(1em)
+= Wizualna analiza wyników
+#v(1em)
+
+#figure(
+  image("spline_n5.png", width: 90%),
+  caption: [Interpolacja dla rzadkiej siatki ($N = 5$).],
+) <fig-n5>
+#v(1em)
+
+@fig-n5 prezentuje fakt, iż przy skrajnie rzadkiej siatce oba stopnie splajnów zawodzą w próbie odtworzenia oscylacyjnego charakteru funkcji $f(x)$. Choć splajn sześcienny (prawy panel) wydaje się "stabilniejszy" wizualnie, dane numeryczne wskazują, że błąd maksymalny dla obu metod jest niemal identyczny ($approx 20$). Splajn sześcienny jedynie "wygładził" przebieg, całkowicie gubiąc informację o wysokoczęstotliwościowych oscylacjach cosinusa.
+
+#v(1em)
+#figure(
+  image("spline_n11.png", width: 90%),
+  caption: [Interpolacja dla siatki $N = 11$.],
+) <fig-n11>
+#v(1em)
+
+Zwiększenie liczby przedziałów do $N = 11$ (@fig-n11) uwidacznia, że splajny kwadratowe generują błędy oscylacyjne na całym badanym przedziale, co wynika z ich niższej klasy gładkości ($C^1$) i charakteru wyznaczania współczynników. Dopiero przy $N = 21$ (@fig-n21) wyraźnie zaznacza się zjawisko niestabilności brzegowej dla stopnia 2. Błąd kumuluje się podczas iteracyjnego wyliczania parametrów, co skutkuje "odklejeniem" się funkcji na prawym krańcu przedziału.
+
+#v(1em)
+#figure(
+  image("spline_n21.png", width: 90%),
+  caption: [Interpolacja dla siatki $N = 21$. Widoczna niestabilność brzegowa stopnia 2.],
+) <fig-n21>
+#v(1em)
+
+W przypadku splajnów sześciennych różnica między warunkami brzegowymi wynika z dopasowania do krzywizny funkcji bazowej. Wariant utwierdzony (WB2) precyzyjniej oddaje nachylenie na krańcach, podczas gdy wariant naturalny (WB1) wprowadza sztuczne wymuszenie zerowej krzywizny ($S''(x) = 0$), co przy funkcji o wysokiej krzywiźnie brzegowej ($f''(3 pi) = 41$) generuje błąd przenoszący się na sąsiednie przedziały.
+
+#v(1em)
+#figure(
+  image("spline_n100.png", width: 90%),
+  caption: [Interpolacja dla gęstej siatki $N = 100$.],
+) <fig-n100>
+#v(1em)
+
+Dopiero dla gęstej siatki ($N=100$, @fig-n100) wszystkie metody dają wyniki wizualnie pokrywające się z funkcją oryginalną.
+
+// ==========================================
+// CZĘŚĆ VI: ANALIZA BŁĘDÓW I ZBIEŻNOŚCI
+// ==========================================
+#v(1em)
+= Analiza błędów i szybkości zbieżności
+#v(1em)
+
+W celu ilościowej weryfikacji jakości interpolacji, obliczono maksymalny błąd bezwzględny (MBB) oraz błąd średniokwadratowy (RMSE) dla ewaluacji w bardzo gęstej siatce 5000 punktów. 
+
+#v(1em)
+== Zestawienie numeryczne błędów
+
+Poniższa @tbl-errors prezentuje pełne zestawienie błędów dla zbadanych wariantów.
+
+#figure(
+  table(
+    columns: (auto, auto, auto, auto),
+    align: (left, center, right, right),
+    [*Typ Splajnu*], [*N*], [*MBB*], [*RMSE*],
+    
+    // N = 5
+    [Stopień 2 (WB1: Utwierdzony)], [5], [20.2254], [10.0363],
+    [Stopień 2 (WB2: Liniowy początek)], [5], [23.7293], [9.7143],
+    [Stopień 3 (WB1: Naturalny)], [5], [20.1175], [9.6051],
+    [Stopień 3 (WB2: Utwierdzony)], [5], [19.9059], [9.9705],
+    
+    // N = 7
+    [Stopień 2 (WB1: Utwierdzony)], [7], [20.0544], [10.0367],
+    [Stopień 2 (WB2: Liniowy początek)], [7], [18.2067], [9.8486],
+    [Stopień 3 (WB1: Naturalny)], [7], [19.9515], [9.8377],
+    [Stopień 3 (WB2: Utwierdzony)], [7], [19.9794], [9.9897],
+
+    // N = 10
+    [Stopień 2 (WB1: Utwierdzony)], [10], [27.7254], [14.0941],
+    [Stopień 2 (WB2: Liniowy początek)], [10], [32.6921], [14.5532],
+    [Stopień 3 (WB1: Naturalny)], [10], [16.3002], [7.9229],
+    [Stopień 3 (WB2: Utwierdzony)], [10], [16.6105], [8.3153],
+
+    // N = 11
+    [Stopień 2 (WB1: Utwierdzony)], [11], [45.8447], [23.4793],
+    [Stopień 2 (WB2: Liniowy początek)], [11], [40.5790], [20.0803],
+    [Stopień 3 (WB1: Naturalny)], [11], [13.4185], [6.6482],
+    [Stopień 3 (WB2: Utwierdzony)], [11], [13.4331], [6.7229],
+
+    // N = 13
+    [Stopień 2 (WB1: Utwierdzony)], [13], [32.0836], [16.7128],
+    [Stopień 2 (WB2: Liniowy początek)], [13], [26.8935], [13.3979],
+    [Stopień 3 (WB1: Naturalny)], [13], [7.0671], [4.0891],
+    [Stopień 3 (WB2: Utwierdzony)], [13], [7.0631], [3.5269],
+
+    // N = 20
+    [Stopień 2 (WB1: Utwierdzony)], [20], [1.4115], [0.8117],
+    [Stopień 2 (WB2: Liniowy początek)], [20], [4.7678], [2.6007],
+    [Stopień 3 (WB1: Naturalny)], [20], [2.6783], [0.7254],
+    [Stopień 3 (WB2: Utwierdzony)], [20], [0.6761], [0.3476],
+
+    // N = 50
+    [Stopień 2 (WB1: Utwierdzony)], [50], [0.0396], [0.0224],
+    [Stopień 2 (WB2: Liniowy początek)], [50], [0.7218], [0.5083],
+    [Stopień 3 (WB1: Naturalny)], [50], [0.3074], [0.0445],
+    [Stopień 3 (WB2: Utwierdzony)], [50], [0.0097], [0.0045],
+
+    // N = 100
+    [Stopień 2 (WB1: Utwierdzony)], [100], [0.0044], [0.0023],
+    [Stopień 2 (WB2: Liniowy początek)], [100], [0.1816], [0.1315],
+    [Stopień 3 (WB1: Naturalny)], [100], [0.0728], [0.0074],
+    [Stopień 3 (WB2: Utwierdzony)], [100], [0.0005], [0.0002],
+
+    // N = 1000
+    [Stopień 2 (WB1: Utwierdzony)], [1000], [$4.30 times 10^(-6)$], [$2.18 times 10^(-6)$],
+    [Stopień 2 (WB2: Liniowy początek)], [1000], [$1.82 times 10^(-3)$], [$1.33 times 10^(-3)$],
+    [Stopień 3 (WB1: Naturalny)], [1000], [$7.14 times 10^(-4)$], [$2.31 times 10^(-5)$],
+    [Stopień 3 (WB2: Utwierdzony)], [1000], [$5.26 times 10^(-8)$], [$2.37 times 10^(-8)$],
+  ),
+  caption: [Kompletne zestawienie błędów interpolacji w zależności od liczby przedziałów ($N$).],
+) <tbl-errors>
+#v(1em)
+
+Z danych w @tbl-errors wynika, że splajn sześcienny z warunkiem utwierdzonym (WB2) deklasuje pozostałe metody pod względem precyzji dopiero przy gęstszych siatkach ($N >= 20$). Przy małej liczbie węzłów ($N=10$) warunek naturalny (WB1) wykazuje błąd maksymalny $16.30$, podczas gdy utwierdzony (WB2) $16.61$. Świadczy to o tym, że dla niedostatecznie spróbkowanych danych narzucanie pochodnej analitycznej może prowadzić do lokalnych przeregulowań.
+
+Słabość warunku naturalnego (WB1) przy dużych $N$ wynika bezpośrednio z charakterystyki funkcji $f(x)$. Ponieważ rzeczywista druga pochodna na brzegu jest daleka od zera, wymuszenie warunku naturalnego staje się głównym źródłem błędu, przez co wariant ten staje się mniej dokładny nawet od splajnu kwadratowego (WB1) już przy $N=50$.
+
+Analizując szczegółowo dane z Tabeli 1, można zaobserwować interesującą anomalię: dla małych wartości $N$ błąd maksymalny nie maleje monotonicznie wraz z zagęszczaniem siatki. Przykładowo, dla splajnu kwadratowego z warunkiem utwierdzonym (WB1), przy $N=10$ błąd MBB wynosi 27.72, następnie gwałtownie rośnie dla $N=11$ do wartości 45.84, aby przy $N=13$ ponownie spaść do poziomu 32.08. 
+
+To zjawisko, wyraźnie uwidocznione na @fig-n11, wynika z relacji między rozmieszczeniem węzłów interpolacji a częstotliwością funkcji referencyjnej. Badana funkcja bazowa zawiera silnie oscylacyjny człon $-10 cos(2x)$ , który w rozpatrywanym przedziale $[-3pi, 3pi]$  wykonuje dokładnie 6 pełnych okresów. Gdy liczba przedziałów $N$ jest niekorzystnie dobrana (jak w przypadku $N=11$), węzły siatki równomiernej "omijają" lokalne ekstrema (szczyty i doliny), trafiając zamiast tego w obszary o najwyższym nachyleniu (największej wartości pierwszej pochodnej). W takiej sytuacji algorytm splajnów kwadratowych, który nie gwarantuje ciągłości krzywizny (jest jedynie klasy $C^1$), generuje potężne przeregulowania, próbując połączyć strome punkty, co skutkuje nienaturalnymi „wyrzutami” funkcji poza rzeczywistą amplitudę. 
+
+Przy $N=10$ lub $N=13$ węzły układają się nieznacznie korzystniej względem minimów i maksimów funkcji $cos(2x)$, co przynosi chwilową redukcję błędu. Dowodzi to, że przy interpolacji funkcji oscylacyjnych rzadką siatką, o lokalnej dokładności decyduje nie tylko sama gęstość podziału, jak również przestrzenne dopasowanie węzłów do ekstremów badanej funkcji.
+
+#pagebreak()
+== Tempo zbieżności metod (Wykres Log-Log)
+
+Dla pełnego potwierdzenia dynamiki malenia błędu w skali globalnej, wygenerowano wykres zależności błędu od liczby przedziałów na osiach logarytmicznych.
+
+#v(1em)
+#figure(
+  image("spline_errors.png", width: 85%),
+  caption: [Błąd maksymalny w funkcji liczby przedziałów $N$ (skala log-log).],
+) <fig-errors>
+#v(1em)
+
+Wykres zbieżności (@fig-errors) ujawnia, że stabilny, liniowy trend spadku błędu w skali logarytmicznej ustala się dopiero po przekroczeniu $N=15$. Dla małych $N$ splajny kwadratowe wykazują przejściowy wzrost błędu, co potwierdza, że siatka musi być wystarczająco gęsta, aby model splajnowy "wszedł" w zakres zbieżności asymptotycznej.
+
+
+// ==========================================
+// CZĘŚĆ VII: WNIOSKI KOŃCOWE
+// ==========================================
+= Podsumowanie i wnioski końcowe
+#v(1em)
+
+1. *Krytyczna rola gęstości siatki:* Żaden z badanych splajnów nie radzi sobie z funkcją oscylującą przy skrajnie rzadkiej siatce ($N=5$). Wynika to z faktu, że węzły nie "trafiają" w kluczowe ekstrema funkcji.
+2. *Wpływ warunków brzegowych:* Dobór warunku brzegowego ma większy wpływ na dokładność niż stopień splajnu. Warunek naturalny ($S''=0$) jest błędem modelowania w przypadku funkcji o dużej krzywiźnie na brzegach.
+3. *Niestabilność splajnów 2. stopnia:* Użyty przeze mnie iteracyjny algorytm wyznaczania splajnów kwadratowych wykazuje tendencję do kumulowania błędu na końcu przedziału, co czyni go mniej stabilnym od globalnego rozwiązania układu trójprzekątniowego stosowanego w splajnach sześciennych.
+4. *Zbieżność:* Splajny sześcienne (WB2) oferują najwyższy rząd zbieżności, co czyni je najbardziej efektywnymi narzędziami interpolacji przy gęstym próbkowaniu.
