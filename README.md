@@ -14,7 +14,8 @@ Poniżej znajduje się lista zrealizowanych do tej pory laboratoriów. Kliknij w
 * **[Lab 3: Interpolacja Hermite'a](./lab3-hermite_interpolation)** - Wykorzystanie wielomianów Hermite'a do interpolacji danych uwzględniających nie tylko wartości funkcji, ale również jej pochodne w węzłach. Implementacja algorytmu różnic dzielonych i analiza wizualna przybliżenia.
 * **[Lab 4: Interpolacja funkcjami sklejanymi](./lab4-spline)** - Implementacja interpolacji funkcji przy użyciu splajnów kwadratowych oraz sześciennych. Porównanie wpływy warunków brzegowych, w tym warunku *clamped* i naturalnego.
 * **[Lab 5: Aproksymacja wielomianami algebraicznymi](./lab5-polynomial-approx)** - Aproksymowanie funkcji referencyjnej operując nieortogonalną bazą składającą się z wielomianów algebraicznych, porównanie dokładności w zależności od liczby punktów referencyjnych oraz stopnia bazy.
-* **Lab 6+:** *Kolejne tematy wkrótce...*
+* **[Lab 6: Aproksymacja wielomianami trygonometrycznymi](./lab6-trig-approx)** - Aproksymowanie funkcji referencyjnej operując ortogonalną bazą składającą się z wielomianów trygonometrycznych. Porównanie dokładności w zależności od współczynnika $R$, poszukiwanie harmonicznej, mapy ciepła RMSE.
+* **Lab 7+:** *Kolejne tematy wkrótce...*
 
 ## 🚀 Jak korzystać z projektów?
 

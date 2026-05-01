@@ -1,7 +1,0 @@
-1. Sprawdzić na ile zmienia przybliżenie, jeśli będziemy brali pod uwagę (albo nie brali) ostatniego węzła.
-2. Poprawić sprawozdanie, mają być dwa: 
-    - jedno dla aproksymacji średniokwadratowej wielomianami algebraicznymi
-    - drugie dla wielomianami trygonometrycznymi
-3. Ważne, aby zauważyć, że po pewnym `m` będziemy mieli nagły spadek błędu - dzieje się tak dlatego, że 
-   używamy funkcji trygonometrycznej o odpowiednim okresie, jest zgodna z liczbą ekstremów naszego wykresu 
-4. 
