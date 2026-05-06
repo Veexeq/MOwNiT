@@ -15,7 +15,7 @@ Poniżej znajduje się lista zrealizowanych do tej pory laboratoriów. Kliknij w
 * **[Lab 4: Interpolacja funkcjami sklejanymi](./lab4-spline)** - Implementacja interpolacji funkcji przy użyciu splajnów kwadratowych oraz sześciennych. Porównanie wpływy warunków brzegowych, w tym warunku *clamped* i naturalnego.
 * **[Lab 5: Aproksymacja wielomianami algebraicznymi](./lab5-polynomial-approx)** - Aproksymowanie funkcji referencyjnej operując nieortogonalną bazą składającą się z wielomianów algebraicznych, porównanie dokładności w zależności od liczby punktów referencyjnych oraz stopnia bazy.
 * **[Lab 6: Aproksymacja wielomianami trygonometrycznymi](./lab6-trig-approx)** - Aproksymowanie funkcji referencyjnej operując ortogonalną bazą składającą się z wielomianów trygonometrycznych. Porównanie dokładności w zależności od współczynnika $R$, poszukiwanie harmonicznej, mapy ciepła RMSE.
-* **[Lab 7: Aproksymacja wielomianami trygonometrycznymi](./lab7-nonlinear_eq)** - Rozwiązywanie równań nieliniowych metodą Newtona-Raphsona oraz metodą siecznych na źle uwarunkowanej funkcji. Badanie wpływu warunków stopu, punktu startowego i metody na liczbę iteracji i dokładność. 
+* **[Lab 7: Równania nieliniowe](./lab7-nonlinear_eq)** - Rozwiązywanie równań nieliniowych metodą Newtona-Raphsona oraz metodą siecznych na źle uwarunkowanej funkcji. Badanie wpływu warunków stopu, punktu startowego i metody na liczbę iteracji i dokładność. 
 * **Lab 8+:** *Kolejne tematy wkrótce...*
 
 ## 🚀 Jak korzystać z projektów?
