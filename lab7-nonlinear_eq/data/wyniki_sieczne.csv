@@ -1,0 +1,393 @@
+﻿Metoda;x0;x1;Rho;Kryterium;Wyznaczony_Pierwiastek;Liczba_Iteracji;Blad_Bezwzgledny;Status
+Sieczne;1.0;-0.4;0.01;incremental;0.9998225542619221;2;0.43391963993673444;Sukces
+Sieczne;1.0;-0.4;0.01;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;0.01;incremental;0.8998391609415487;2;0.333936246616361;Sukces
+Sieczne;0.9;-0.4;0.01;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;0.01;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;0.01;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;0.01;incremental;0.7998610558835275;2;0.23395814155833983;Sukces
+Sieczne;0.8;-0.4;0.01;residual;0.5821749385337474;43;0.016272024208559666;Sukces
+Sieczne;0.8;1.0;0.01;incremental;0.9999999683559571;3;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;0.01;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;0.01;incremental;0.6998960465933891;2;0.13399313226820142;Sukces
+Sieczne;0.7;-0.4;0.01;residual;0.5726339830461713;7;0.006731068720983613;Sukces
+Sieczne;0.7;1.0;0.01;incremental;0.9986441669021506;3;0.43274125257696294;Sukces
+Sieczne;0.7;1.0;0.01;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;0.01;incremental;0.5999630572974957;2;0.03406014297230797;Sukces
+Sieczne;0.6;-0.4;0.01;residual;0.5593919500464348;3;0.006510964278752862;Sukces
+Sieczne;0.6;1.0;0.01;incremental;0.737173221563068;6;0.17127030723788028;Sukces
+Sieczne;0.6;1.0;0.01;residual;0.5741833629552777;14;0.008280448630090032;Sukces
+Sieczne;0.5;-0.4;0.01;incremental;0.5001072693509793;2;0.06579564497420842;Sukces
+Sieczne;0.5;-0.4;0.01;residual;0.5608710946794953;4;0.005031819645692437;Sukces
+Sieczne;0.5;1.0;0.01;incremental;0.7423392195919591;4;0.17643630526677145;Sukces
+Sieczne;0.5;1.0;0.01;residual;0.5840572608343899;12;0.018154346509202224;Sukces
+Sieczne;0.4;-0.4;0.01;incremental;0.400434427642581;2;0.16546848668260666;Sukces
+Sieczne;0.4;-0.4;0.01;residual;0.562425798084736;6;0.003477116240451661;Sukces
+Sieczne;0.4;1.0;0.01;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;0.01;incremental;0.3011853544254412;2;0.2647175598997465;Sukces
+Sieczne;0.3;-0.4;0.01;residual;0.5570433870845493;7;0.008859527240638432;Sukces
+Sieczne;0.3;1.0;0.01;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;0.01;incremental;0.20288736274434907;2;0.36301555158083865;Sukces
+Sieczne;0.2;-0.4;0.01;residual;0.5624136559557721;9;0.0034892583694156043;Sukces
+Sieczne;0.2;1.0;0.01;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;0.01;incremental;0.10662878486409888;2;0.4592741294610888;Sukces
+Sieczne;0.1;-0.4;0.01;residual;0.558608102071858;10;0.00729481225332973;Sukces
+Sieczne;0.1;1.0;0.01;incremental;0.9915346580013071;1;0.42563174367611945;Sukces
+Sieczne;0.1;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;0.01;incremental;0.014458285735043258;2;0.5514446285901444;Sukces
+Sieczne;0.0;-0.4;0.01;residual;0.5535036896817788;11;0.012399224643408924;Sukces
+Sieczne;0.0;1.0;0.01;incremental;0.9965397923875432;1;0.4306368780623555;Sukces
+Sieczne;0.0;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;0.01;incremental;0.5655927529069013;14;0.0003101614182864365;Sukces
+Sieczne;-0.1;-0.4;0.01;residual;0.5622093495138737;13;0.0036935648113139985;Sukces
+Sieczne;-0.1;1.0;0.01;incremental;0.9985997691715351;1;0.43269685484634746;Sukces
+Sieczne;-0.1;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;0.01;incremental;0.5654675562101086;15;0.0004353581150791097;Sukces
+Sieczne;-0.2;-0.4;0.01;residual;0.5613421320434802;14;0.004560782281707532;Sukces
+Sieczne;-0.2;1.0;0.01;incremental;0.9994380548777948;1;0.4335351405526071;Sukces
+Sieczne;-0.2;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;0.01;incremental;0.5655764700069521;16;0.00032644431823558584;Sukces
+Sieczne;-0.3;-0.4;0.01;residual;0.5620899248881756;15;0.0038129894370121376;Sukces
+Sieczne;-0.3;1.0;0.01;incremental;0.9997760444810051;1;0.4338731301558174;Sukces
+Sieczne;-0.3;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;0.01;incremental;0.9999112737511576;1;0.43400835942596994;Sukces
+Sieczne;-0.4;1.0;0.01;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;0.001;incremental;0.9998225542619221;2;0.43391963993673444;Sukces
+Sieczne;1.0;-0.4;0.001;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;0.001;incremental;0.8998391609415487;2;0.333936246616361;Sukces
+Sieczne;0.9;-0.4;0.001;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;0.001;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;0.001;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;0.001;incremental;0.7998610558835275;2;0.23395814155833983;Sukces
+Sieczne;0.8;-0.4;0.001;residual;0.565604173678578;45;0.00029874064660972977;Sukces
+Sieczne;0.8;1.0;0.001;incremental;0.9999999683559571;3;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;0.001;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;0.001;incremental;0.6998960465933891;2;0.13399313226820142;Sukces
+Sieczne;0.7;-0.4;0.001;residual;0.5667540401822229;8;0.0008511258570351732;Sukces
+Sieczne;0.7;1.0;0.001;incremental;0.9986441669021506;3;0.43274125257696294;Sukces
+Sieczne;0.7;1.0;0.001;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;0.001;incremental;0.5999630572974957;2;0.03406014297230797;Sukces
+Sieczne;0.6;-0.4;0.001;residual;0.567058694933203;4;0.0011557806080153554;Sukces
+Sieczne;0.6;1.0;0.001;incremental;0.5659032059757637;17;2.9165057602309474e-07;Sukces
+Sieczne;0.6;1.0;0.001;residual;0.5670810443761468;15;0.0011781300509591253;Sukces
+Sieczne;0.5;-0.4;0.001;incremental;0.5001072693509793;2;0.06579564497420842;Sukces
+Sieczne;0.5;-0.4;0.001;residual;0.565477279694221;5;0.00042563463096667586;Sukces
+Sieczne;0.5;1.0;0.001;incremental;0.7423392195919591;4;0.17643630526677145;Sukces
+Sieczne;0.5;1.0;0.001;residual;0.5655026141526105;14;0.00040030017257719486;Sukces
+Sieczne;0.4;-0.4;0.001;incremental;0.400434427642581;2;0.16546848668260666;Sukces
+Sieczne;0.4;-0.4;0.001;residual;0.5656294556790155;7;0.00027345864617223103;Sukces
+Sieczne;0.4;1.0;0.001;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;0.001;incremental;0.3011853544254412;2;0.2647175598997465;Sukces
+Sieczne;0.3;-0.4;0.001;residual;0.5646303713282096;8;0.0012725429969780988;Sukces
+Sieczne;0.3;1.0;0.001;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;0.001;incremental;0.5658980061133085;11;4.908211879151025e-06;Sukces
+Sieczne;0.2;-0.4;0.001;residual;0.5656194420297819;10;0.00028347229540581775;Sukces
+Sieczne;0.2;1.0;0.001;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;0.001;incremental;0.5658697033928293;12;3.321093235841843e-05;Sukces
+Sieczne;0.1;-0.4;0.001;residual;0.5649786318477794;11;0.0009242824774082781;Sukces
+Sieczne;0.1;1.0;0.001;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;0.001;incremental;0.5659015168285362;14;1.397496651511787e-06;Sukces
+Sieczne;0.0;-0.4;0.001;residual;0.565772617145774;13;0.00013029717941370755;Sukces
+Sieczne;0.0;1.0;0.001;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;0.001;incremental;0.5658972317396763;15;5.682585511368465e-06;Sukces
+Sieczne;-0.1;-0.4;0.001;residual;0.5655927529069013;14;0.0003101614182864365;Sukces
+Sieczne;-0.1;1.0;0.001;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;0.001;incremental;0.5658930814492648;16;9.832875922932693e-06;Sukces
+Sieczne;-0.2;-0.4;0.001;residual;0.5654675562101086;15;0.0004353581150791097;Sukces
+Sieczne;-0.2;1.0;0.001;incremental;0.9994380548777948;1;0.4335351405526071;Sukces
+Sieczne;-0.2;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;0.001;incremental;0.5658967414280338;17;6.172897153877699e-06;Sukces
+Sieczne;-0.3;-0.4;0.001;residual;0.5655764700069521;16;0.00032644431823558584;Sukces
+Sieczne;-0.3;1.0;0.001;incremental;0.9997760444810051;1;0.4338731301558174;Sukces
+Sieczne;-0.3;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;0.001;incremental;0.9999112737511576;1;0.43400835942596994;Sukces
+Sieczne;-0.4;1.0;0.001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;0.0001;incremental;0.9998225542619221;2;0.43391963993673444;Sukces
+Sieczne;1.0;-0.4;0.0001;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;0.0001;incremental;0.8998391609415487;2;0.333936246616361;Sukces
+Sieczne;0.9;-0.4;0.0001;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;0.0001;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;0.0001;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;0.0001;incremental;0.7998610558835275;2;0.23395814155833983;Sukces
+Sieczne;0.8;-0.4;0.0001;residual;0.5659082503853196;46;5.3360601318663825e-06;Sukces
+Sieczne;0.8;1.0;0.0001;incremental;0.9999999683559571;3;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;0.0001;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;0.0001;incremental;0.6998960465933891;2;0.13399313226820142;Sukces
+Sieczne;0.7;-0.4;0.0001;residual;0.5658739452303961;9;2.8969094791553296e-05;Sukces
+Sieczne;0.7;1.0;0.0001;incremental;0.9986441669021504;6;0.4327412525769627;Sukces
+Sieczne;0.7;1.0;0.0001;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;0.0001;incremental;0.5999630572974957;2;0.03406014297230797;Sukces
+Sieczne;0.6;-0.4;0.0001;residual;0.5659401552080304;5;3.72408828427373e-05;Sukces
+Sieczne;0.6;1.0;0.0001;incremental;0.5659032059757637;17;2.9165057602309474e-07;Sukces
+Sieczne;0.6;1.0;0.0001;residual;0.5658534317739049;16;4.948255128278678e-05;Sukces
+Sieczne;0.5;-0.4;0.0001;incremental;0.5001072693509793;2;0.06579564497420842;Sukces
+Sieczne;0.5;-0.4;0.0001;residual;0.5658923163807557;6;1.0597944432033657e-05;Sukces
+Sieczne;0.5;1.0;0.0001;incremental;0.7423392195919591;4;0.17643630526677145;Sukces
+Sieczne;0.5;1.0;0.0001;residual;0.5659114733869612;15;8.559061773549814e-06;Sukces
+Sieczne;0.4;-0.4;0.0001;incremental;0.565902907884946;9;6.440241673288938e-09;Sukces
+Sieczne;0.4;-0.4;0.0001;residual;0.5658981957991146;8;4.718526073088647e-06;Sukces
+Sieczne;0.4;1.0;0.0001;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;0.0001;incremental;0.5659025633470097;10;3.5097817796536646e-07;Sukces
+Sieczne;0.3;-0.4;0.0001;residual;0.5658475587805378;9;5.535554464985992e-05;Sukces
+Sieczne;0.3;1.0;0.0001;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;0.0001;incremental;0.5659029073808519;12;6.944335773084731e-09;Sukces
+Sieczne;0.2;-0.4;0.0001;residual;0.5658980061133085;11;4.908211879151025e-06;Sukces
+Sieczne;0.2;1.0;0.0001;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;0.0001;incremental;0.5659027612870254;13;1.5303816225387123e-07;Sukces
+Sieczne;0.1;-0.4;0.0001;residual;0.5658697033928293;12;3.321093235841843e-05;Sukces
+Sieczne;0.1;1.0;0.0001;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;0.0001;incremental;0.5659029134161213;15;9.090663777300279e-10;Sukces
+Sieczne;0.0;-0.4;0.0001;residual;0.565772617145774;13;0.00013029717941370755;Sukces
+Sieczne;0.0;1.0;0.0001;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;0.0001;incremental;0.5659029055286711;16;8.796516626219386e-09;Sukces
+Sieczne;-0.1;-0.4;0.0001;residual;0.5658972317396763;15;5.682585511368465e-06;Sukces
+Sieczne;-0.1;1.0;0.0001;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;0.0001;incremental;0.5659028929647145;17;2.136047316803058e-08;Sukces
+Sieczne;-0.2;-0.4;0.0001;residual;0.5658930814492648;16;9.832875922932693e-06;Sukces
+Sieczne;-0.2;1.0;0.0001;incremental;0.9994380548777944;4;0.43353514055260667;Sukces
+Sieczne;-0.2;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;0.0001;incremental;0.5659029042683131;18;1.005687455535309e-08;Sukces
+Sieczne;-0.3;-0.4;0.0001;residual;0.5658967414280338;17;6.172897153877699e-06;Sukces
+Sieczne;-0.3;1.0;0.0001;incremental;0.9997760444810044;4;0.43387313015581674;Sukces
+Sieczne;-0.3;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;0.0001;incremental;0.9999112737511576;1;0.43400835942596994;Sukces
+Sieczne;-0.4;1.0;0.0001;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;1e-05;incremental;0.9998225542619226;5;0.4339196399367349;Sukces
+Sieczne;1.0;-0.4;1e-05;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;1e-05;incremental;0.8998391604310351;5;0.3339362461058474;Sukces
+Sieczne;0.9;-0.4;1e-05;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;1e-05;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;1e-05;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;1e-05;incremental;0.5659029222814334;47;7.956245662299466e-09;Sukces
+Sieczne;0.8;-0.4;1e-05;residual;0.5659082503853196;46;5.3360601318663825e-06;Sukces
+Sieczne;0.8;1.0;1e-05;incremental;0.9999999683559571;3;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;1e-05;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;1e-05;incremental;0.5659029143430215;11;1.7833845511461277e-11;Sukces
+Sieczne;0.7;-0.4;1e-05;residual;0.5659030376145869;10;1.232893992453299e-07;Sukces
+Sieczne;0.7;1.0;1e-05;incremental;0.9986441669021504;6;0.4327412525769627;Sukces
+Sieczne;0.7;1.0;1e-05;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;1e-05;incremental;0.5659029143652385;7;4.005085152414267e-11;Sukces
+Sieczne;0.6;-0.4;1e-05;residual;0.5659026989678957;6;2.1535729199939624e-07;Sukces
+Sieczne;0.6;1.0;1e-05;incremental;0.565902914397246;18;7.205835927948101e-11;Sukces
+Sieczne;0.6;1.0;1e-05;residual;0.5659032059757637;17;2.9165057602309474e-07;Sukces
+Sieczne;0.5;-0.4;1e-05;incremental;0.5659029143239965;8;1.1911582831203305e-12;Sukces
+Sieczne;0.5;-0.4;1e-05;residual;0.5658923163807557;6;1.0597944432033657e-05;Sukces
+Sieczne;0.5;1.0;1e-05;incremental;0.5659029314227477;16;1.7097560034429193e-08;Sukces
+Sieczne;0.5;1.0;1e-05;residual;0.5659114733869612;15;8.559061773549814e-06;Sukces
+Sieczne;0.4;-0.4;1e-05;incremental;0.565902907884946;9;6.440241673288938e-09;Sukces
+Sieczne;0.4;-0.4;1e-05;residual;0.5658981957991146;8;4.718526073088647e-06;Sukces
+Sieczne;0.4;1.0;1e-05;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;1e-05;incremental;0.5659029142281801;11;9.700762415576492e-11;Sukces
+Sieczne;0.3;-0.4;1e-05;residual;0.5659025633470097;10;3.5097817796536646e-07;Sukces
+Sieczne;0.3;1.0;1e-05;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;1e-05;incremental;0.5659029073808519;12;6.944335773084731e-09;Sukces
+Sieczne;0.2;-0.4;1e-05;residual;0.5658980061133085;11;4.908211879151025e-06;Sukces
+Sieczne;0.2;1.0;1e-05;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;1e-05;incremental;0.5659029142998094;14;2.5378255052999066e-11;Sukces
+Sieczne;0.1;-0.4;1e-05;residual;0.5659027612870254;13;1.5303816225387123e-07;Sukces
+Sieczne;0.1;1.0;1e-05;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;1e-05;incremental;0.5659029134161213;15;9.090663777300279e-10;Sukces
+Sieczne;0.0;-0.4;1e-05;residual;0.5659015168285362;14;1.397496651511787e-06;Sukces
+Sieczne;0.0;1.0;1e-05;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;1e-05;incremental;0.5659029055286711;16;8.796516626219386e-09;Sukces
+Sieczne;-0.1;-0.4;1e-05;residual;0.5658972317396763;15;5.682585511368465e-06;Sukces
+Sieczne;-0.1;1.0;1e-05;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;1e-05;incremental;0.5659028929647145;17;2.136047316803058e-08;Sukces
+Sieczne;-0.2;-0.4;1e-05;residual;0.5658930814492648;16;9.832875922932693e-06;Sukces
+Sieczne;-0.2;1.0;1e-05;incremental;0.9994380548777944;4;0.43353514055260667;Sukces
+Sieczne;-0.2;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;1e-05;incremental;0.5659029042683131;18;1.005687455535309e-08;Sukces
+Sieczne;-0.3;-0.4;1e-05;residual;0.5658967414280338;17;6.172897153877699e-06;Sukces
+Sieczne;-0.3;1.0;1e-05;incremental;0.9997760444810044;4;0.43387313015581674;Sukces
+Sieczne;-0.3;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;1e-05;incremental;0.9999112737511577;4;0.43400835942597005;Sukces
+Sieczne;-0.4;1.0;1e-05;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;1e-07;incremental;0.9998225542619226;5;0.4339196399367349;Sukces
+Sieczne;1.0;-0.4;1e-07;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;1e-07;incremental;0.8998391604310351;5;0.3339362461058474;Sukces
+Sieczne;0.9;-0.4;1e-07;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;1e-07;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;1e-07;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;1e-07;incremental;0.5659029143249756;48;2.120525977034049e-13;Sukces
+Sieczne;0.8;-0.4;1e-07;residual;0.5659029222814334;47;7.956245662299466e-09;Sukces
+Sieczne;0.8;1.0;1e-07;incremental;0.9999999683559571;3;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;1e-07;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;1e-07;incremental;0.5659029143251877;12;0.0;Sukces
+Sieczne;0.7;-0.4;1e-07;residual;0.5659030376145869;10;1.232893992453299e-07;Sukces
+Sieczne;0.7;1.0;1e-07;incremental;0.9986441669021504;6;0.4327412525769627;Sukces
+Sieczne;0.7;1.0;1e-07;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;1e-07;incremental;0.5659029143251877;8;0.0;Sukces
+Sieczne;0.6;-0.4;1e-07;residual;0.5659029143652385;7;4.005085152414267e-11;Sukces
+Sieczne;0.6;1.0;1e-07;incremental;0.5659029143251876;19;1.1102230246251565e-16;Sukces
+Sieczne;0.6;1.0;1e-07;residual;0.565902914397246;18;7.205835927948101e-11;Sukces
+Sieczne;0.5;-0.4;1e-07;incremental;0.5659029143239965;8;1.1911582831203305e-12;Sukces
+Sieczne;0.5;-0.4;1e-07;residual;0.5659028918165752;7;2.2508612529392735e-08;Sukces
+Sieczne;0.5;1.0;1e-07;incremental;0.5659029143244569;17;7.30748794808278e-13;Sukces
+Sieczne;0.5;1.0;1e-07;residual;0.5659029314227477;16;1.7097560034429193e-08;Sukces
+Sieczne;0.4;-0.4;1e-07;incremental;0.5659029143250359;10;1.517674874662589e-13;Sukces
+Sieczne;0.4;-0.4;1e-07;residual;0.565902907884946;9;6.440241673288938e-09;Sukces
+Sieczne;0.4;1.0;1e-07;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;1e-07;incremental;0.5659029143251875;12;2.220446049250313e-16;Sukces
+Sieczne;0.3;-0.4;1e-07;residual;0.5659029142281801;11;9.700762415576492e-11;Sukces
+Sieczne;0.3;1.0;1e-07;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;1e-07;incremental;0.5659029143250175;13;1.701971896750365e-13;Sukces
+Sieczne;0.2;-0.4;1e-07;residual;0.5659029073808519;12;6.944335773084731e-09;Sukces
+Sieczne;0.2;1.0;1e-07;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;1e-07;incremental;0.5659029143251877;15;0.0;Sukces
+Sieczne;0.1;-0.4;1e-07;residual;0.5659027612870254;13;1.5303816225387123e-07;Sukces
+Sieczne;0.1;1.0;1e-07;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;1e-07;incremental;0.5659029143251814;16;6.328271240363392e-15;Sukces
+Sieczne;0.0;-0.4;1e-07;residual;0.5659029134161213;15;9.090663777300279e-10;Sukces
+Sieczne;0.0;1.0;1e-07;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;1e-07;incremental;0.5659029143249381;17;2.495781359357352e-13;Sukces
+Sieczne;-0.1;-0.4;1e-07;residual;0.5659029055286711;16;8.796516626219386e-09;Sukces
+Sieczne;-0.1;1.0;1e-07;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;1e-07;incremental;0.5659029143241389;18;1.0488276913633854e-12;Sukces
+Sieczne;-0.2;-0.4;1e-07;residual;0.5659028929647145;17;2.136047316803058e-08;Sukces
+Sieczne;-0.2;1.0;1e-07;incremental;0.9994380548777944;4;0.43353514055260667;Sukces
+Sieczne;-0.2;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;1e-07;incremental;0.5659029143248777;19;3.099742684753437e-13;Sukces
+Sieczne;-0.3;-0.4;1e-07;residual;0.5659029042683131;18;1.005687455535309e-08;Sukces
+Sieczne;-0.3;1.0;1e-07;incremental;0.9997760444810044;4;0.43387313015581674;Sukces
+Sieczne;-0.3;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;1e-07;incremental;0.9999112737511577;4;0.43400835942597005;Sukces
+Sieczne;-0.4;1.0;1e-07;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;1e-10;incremental;0.9998225542619226;5;0.4339196399367349;Sukces
+Sieczne;1.0;-0.4;1e-10;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;1e-10;incremental;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;-0.4;1e-10;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;1e-10;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;1e-10;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;1e-10;incremental;0.5659029143251877;49;0.0;Sukces
+Sieczne;0.8;-0.4;1e-10;residual;0.5659029143249756;48;2.120525977034049e-13;Sukces
+Sieczne;0.8;1.0;1e-10;incremental;0.9999999683559571;6;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;1e-10;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;1e-10;incremental;0.5659029143251877;12;0.0;Sukces
+Sieczne;0.7;-0.4;1e-10;residual;0.5659029143430215;11;1.7833845511461277e-11;Sukces
+Sieczne;0.7;1.0;1e-10;incremental;0.9986441669021504;6;0.4327412525769627;Sukces
+Sieczne;0.7;1.0;1e-10;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;1e-10;incremental;0.5659029143251877;8;0.0;Sukces
+Sieczne;0.6;-0.4;1e-10;residual;0.5659029143652385;7;4.005085152414267e-11;Sukces
+Sieczne;0.6;1.0;1e-10;incremental;0.5659029143251876;19;1.1102230246251565e-16;Sukces
+Sieczne;0.6;1.0;1e-10;residual;0.565902914397246;18;7.205835927948101e-11;Sukces
+Sieczne;0.5;-0.4;1e-10;incremental;0.5659029143251877;9;0.0;Sukces
+Sieczne;0.5;-0.4;1e-10;residual;0.5659029143239965;8;1.1911582831203305e-12;Sukces
+Sieczne;0.5;1.0;1e-10;incremental;0.5659029143251877;18;0.0;Sukces
+Sieczne;0.5;1.0;1e-10;residual;0.5659029143244569;17;7.30748794808278e-13;Sukces
+Sieczne;0.4;-0.4;1e-10;incremental;0.5659029143251877;11;0.0;Sukces
+Sieczne;0.4;-0.4;1e-10;residual;0.5659029143250359;10;1.517674874662589e-13;Sukces
+Sieczne;0.4;1.0;1e-10;incremental;0.8865349386704495;4;0.32063202434526183;Sukces
+Sieczne;0.4;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;1e-10;incremental;0.5659029143251875;12;2.220446049250313e-16;Sukces
+Sieczne;0.3;-0.4;1e-10;residual;0.5659029142281801;11;9.700762415576492e-11;Sukces
+Sieczne;0.3;1.0;1e-10;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;1e-10;incremental;0.5659029143251877;14;0.0;Sukces
+Sieczne;0.2;-0.4;1e-10;residual;0.5659029143250175;13;1.701971896750365e-13;Sukces
+Sieczne;0.2;1.0;1e-10;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;1e-10;incremental;0.5659029143251877;15;0.0;Sukces
+Sieczne;0.1;-0.4;1e-10;residual;0.5659029142998094;14;2.5378255052999066e-11;Sukces
+Sieczne;0.1;1.0;1e-10;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;1e-10;incremental;0.5659029143251877;17;0.0;Sukces
+Sieczne;0.0;-0.4;1e-10;residual;0.5659029143251814;16;6.328271240363392e-15;Sukces
+Sieczne;0.0;1.0;1e-10;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;1e-10;incremental;0.5659029143251877;18;0.0;Sukces
+Sieczne;-0.1;-0.4;1e-10;residual;0.5659029143249381;17;2.495781359357352e-13;Sukces
+Sieczne;-0.1;1.0;1e-10;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;1e-10;incremental;0.5659029143251877;19;0.0;Sukces
+Sieczne;-0.2;-0.4;1e-10;residual;0.5659029143241389;18;1.0488276913633854e-12;Sukces
+Sieczne;-0.2;1.0;1e-10;incremental;0.9994380548777944;4;0.43353514055260667;Sukces
+Sieczne;-0.2;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;1e-10;incremental;0.5659029143251877;20;0.0;Sukces
+Sieczne;-0.3;-0.4;1e-10;residual;0.5659029143248777;19;3.099742684753437e-13;Sukces
+Sieczne;-0.3;1.0;1e-10;incremental;0.9997760444810044;4;0.43387313015581674;Sukces
+Sieczne;-0.3;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;1e-10;incremental;0.9999112737511577;4;0.43400835942597005;Sukces
+Sieczne;-0.4;1.0;1e-10;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;1.0;-0.4;1e-15;incremental;0.9998225542619226;5;0.4339196399367349;Sukces
+Sieczne;1.0;-0.4;1e-15;residual;;5;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.9;-0.4;1e-15;incremental;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;-0.4;1e-15;residual;0.8998391441909162;100;0.33393622986572846;Osiagnieto limit iteracji
+Sieczne;0.9;1.0;1e-15;incremental;0.9999999999999998;3;0.4340970856748121;Sukces
+Sieczne;0.9;1.0;1e-15;residual;;3;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.8;-0.4;1e-15;incremental;0.5659029143251877;50;0.0;Sukces
+Sieczne;0.8;-0.4;1e-15;residual;0.5659029143251877;49;0.0;Sukces
+Sieczne;0.8;1.0;1e-15;incremental;0.9999999683559571;6;0.43409705403076937;Sukces
+Sieczne;0.8;1.0;1e-15;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.7;-0.4;1e-15;incremental;0.5659029143251877;13;0.0;Sukces
+Sieczne;0.7;-0.4;1e-15;residual;0.5659029143251877;12;0.0;Sukces
+Sieczne;0.7;1.0;1e-15;incremental;0.9986441669021504;6;0.4327412525769627;Sukces
+Sieczne;0.7;1.0;1e-15;residual;;6;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.6;-0.4;1e-15;incremental;0.5659029143251877;9;0.0;Sukces
+Sieczne;0.6;-0.4;1e-15;residual;0.5659029143251877;8;0.0;Sukces
+Sieczne;0.6;1.0;1e-15;incremental;0.5659029143251877;20;0.0;Sukces
+Sieczne;0.6;1.0;1e-15;residual;0.5659029143251876;19;1.1102230246251565e-16;Sukces
+Sieczne;0.5;-0.4;1e-15;incremental;0.5659029143251877;10;0.0;Sukces
+Sieczne;0.5;-0.4;1e-15;residual;0.5659029143251877;9;0.0;Sukces
+Sieczne;0.5;1.0;1e-15;incremental;0.5659029143251877;19;0.0;Sukces
+Sieczne;0.5;1.0;1e-15;residual;0.5659029143251877;18;0.0;Sukces
+Sieczne;0.4;-0.4;1e-15;incremental;0.5659029143251877;12;0.0;Sukces
+Sieczne;0.4;-0.4;1e-15;residual;0.5659029143251877;11;0.0;Sukces
+Sieczne;0.4;1.0;1e-15;incremental;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.4;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.3;-0.4;1e-15;incremental;0.5659029143251877;13;0.0;Sukces
+Sieczne;0.3;-0.4;1e-15;residual;0.5659029143251875;12;2.220446049250313e-16;Sukces
+Sieczne;0.3;1.0;1e-15;incremental;0.9513365979830688;4;0.3854336836578811;Sukces
+Sieczne;0.3;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.2;-0.4;1e-15;incremental;0.5659029143251877;15;0.0;Sukces
+Sieczne;0.2;-0.4;1e-15;residual;0.5659029143251877;14;0.0;Sukces
+Sieczne;0.2;1.0;1e-15;incremental;0.9795444930584667;4;0.413641578733279;Sukces
+Sieczne;0.2;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.1;-0.4;1e-15;incremental;0.5659029143251877;16;0.0;Sukces
+Sieczne;0.1;-0.4;1e-15;residual;0.5659029143251877;15;0.0;Sukces
+Sieczne;0.1;1.0;1e-15;incremental;0.9915346580013074;4;0.42563174367611967;Sukces
+Sieczne;0.1;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;0.0;-0.4;1e-15;incremental;0.5659029143251877;18;0.0;Sukces
+Sieczne;0.0;-0.4;1e-15;residual;0.5659029143251877;17;0.0;Sukces
+Sieczne;0.0;1.0;1e-15;incremental;0.9965397923875434;4;0.43063687806235573;Sukces
+Sieczne;0.0;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.1;-0.4;1e-15;incremental;0.5659029143251877;19;0.0;Sukces
+Sieczne;-0.1;-0.4;1e-15;residual;0.5659029143251877;18;0.0;Sukces
+Sieczne;-0.1;1.0;1e-15;incremental;0.9985997691715349;4;0.43269685484634723;Sukces
+Sieczne;-0.1;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.2;-0.4;1e-15;incremental;0.5659029143251877;20;0.0;Sukces
+Sieczne;-0.2;-0.4;1e-15;residual;0.5659029143251877;19;0.0;Sukces
+Sieczne;-0.2;1.0;1e-15;incremental;0.9994380548777944;4;0.43353514055260667;Sukces
+Sieczne;-0.2;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.3;-0.4;1e-15;incremental;0.5659029143251877;21;0.0;Sukces
+Sieczne;-0.3;-0.4;1e-15;residual;0.5659029143251877;20;0.0;Sukces
+Sieczne;-0.3;1.0;1e-15;incremental;0.9997760444810044;4;0.43387313015581674;Sukces
+Sieczne;-0.3;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
+Sieczne;-0.4;1.0;1e-15;incremental;0.9999112737511577;4;0.43400835942597005;Sukces
+Sieczne;-0.4;1.0;1e-15;residual;;4;;Blad: f(x1) - f(x0) bliskie 0
