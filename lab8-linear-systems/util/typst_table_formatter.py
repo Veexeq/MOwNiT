@@ -1,4 +1,5 @@
 import sys
+import argparse
 import pandas as pd
 from pathlib import Path
 
@@ -62,8 +63,23 @@ if __name__ == "__main__":
     SCRIPT_DIR = Path(__file__).parent.resolve()
     PROJECT_ROOT = SCRIPT_DIR.parent
     
-    INPUT_FILE = PROJECT_ROOT / "data" / "exercise1_data.csv"
-    OUTPUT_FILE = SCRIPT_DIR / "exercise1_typst_table.txt"
+    parser = argparse.ArgumentParser(description="Convert CSV data to a Typst table format.")
+    
+    parser.add_argument(
+        "-i", "--input", 
+        type=str, 
+        required=True,
+        help="Path to the input CSV file (default: data/exercise1_data.csv)"
+    )
+    
+    parser.add_argument(
+        "-o", "--output", 
+        type=str, 
+        required=True,
+        help="Path where the Typst table text file will be saved (default: util/exercise1_typst_table.txt)"
+    )
+    
+    args = parser.parse_args()
     
     print("Starting CSV to Typst conversion...")
-    format_typst_table(INPUT_FILE, OUTPUT_FILE)
+    format_typst_table(args.input, args.output)
