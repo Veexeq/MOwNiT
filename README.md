@@ -17,7 +17,8 @@ Poniżej znajduje się lista zrealizowanych do tej pory laboratoriów. Kliknij w
 * **[Lab 6: Aproksymacja wielomianami trygonometrycznymi](./lab6-trig-approx)** - Aproksymowanie funkcji referencyjnej operując ortogonalną bazą składającą się z wielomianów trygonometrycznych. Porównanie dokładności w zależności od współczynnika $R$, poszukiwanie harmonicznej, mapy ciepła RMSE.
 * **[Lab 7: Równania nieliniowe](./lab7-nonlinear_eq)** - Rozwiązywanie równań nieliniowych metodą Newtona-Raphsona oraz metodą siecznych na źle uwarunkowanej funkcji. Badanie wpływu warunków stopu, punktu startowego i metody na liczbę iteracji i dokładność. 
 * **[Lab 8: Układy równań liniowych metodami bezpośrednimi](./lab8-linear-systems)** - Rozwiązywanie układów równań liniowych metodami bezpośrednimi. Badanie wpływu współczynnika uwarunkowania macierzy oraz precyzji zmiennoprzecinkowej na dokładność wyniku. Optymalizacja rozwiązania dla macierzy trójdiagonalnej.
-* **Lab 9+:** *Kolejne tematy wkrótce...*
+* **[Lab 9: Układy równań liniowych metodami iteracyjnymi](./lab9-linear-systems-v2/)** - Projekt stanowi numeryczną oraz algorytmiczną analizę zbieżności iteracyjnej metody Jacobiego dla specyficznej klasy układów równań liniowych $Ax = b$.
+* **Lab 10+:** *Kolejne tematy wkrótce...*
 
 ## 🚀 Jak korzystać z projektów?
 
